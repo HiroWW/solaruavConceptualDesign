@@ -6,8 +6,6 @@ function min_pos = MinimumPositive(z)
                 min_pos = z(j);
             elseif z(j)<min_pos  
                 min_pos = z(j);
-            else 
-                disp('coult not solve');
             end
         else 
             disp('coult not solve');

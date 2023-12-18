@@ -16,8 +16,8 @@ rho_array = [1.224, 1.11, 1.006, 0.819, 0.659, 0.413, 0.192, 0.087, 0.039, 0.017
 rho = spline(alt_array, rho_array,500); 
 %=========== Irradiance conditions ==============
 I_max = 950;
-T_day = 18.2*3600;
-n_wthr = 0.7;
+T_day = 13.2*3600;
+n_wthr = 0.9;
 %================ Aerodynamics ==================
 C_L = 0.8;
 C_D_afl = 0.0126;
