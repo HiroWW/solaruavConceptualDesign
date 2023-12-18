@@ -34,11 +34,12 @@ x1 = 3.1;           % Scaling exponent for b [-]
 x2 = -0.25;         % Scaling exponent for AR [-]
 
 %============= Propulsion group =================
-n_ctrl = 0.95; % Efficiency of motor controller [-]
-n_mot = 0.85;  % Efficiency of motor [-]
-n_grb = 0.97;  % Efficiency of gearbox [-]
-n_plr = 0.85;  % Efficiency of propeller [-]
-k_prop = 0.008;% Mass/Power ration of propulsion group [kg/W]
+n_ctrl = 0.95;  % Efficiency of motor controller [-]
+n_mot = 0.85;   % Efficiency of motor [-]
+n_grb = 0.97;   % Efficiency of gearbox [-]
+n_plr = 0.85;   % Efficiency of propeller [-]
+%k_prop = 0.008  % Mass/Power ration of propulsion group [kg/W]
+k_prop = 0.00029; % Mass/Power ration of propulsion group [kg/W]
 
 %======= Battery and Stepdown converter =========
 n_chrg = 0.95;    % Efficiency of charge process [-]
