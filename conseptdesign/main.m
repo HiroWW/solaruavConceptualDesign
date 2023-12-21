@@ -10,7 +10,7 @@
 %=== SCENARIO: Solar Unmanned Aerial Vehicle for 24h Flight
 %==========================================================================
 clc;clear;clf;
-cmap = colormap ("hot");
+cmap = colormap ("jet");
 j = 0;
 
 InitParameters;
