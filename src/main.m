@@ -16,9 +16,6 @@ j = 0;
 InitParameters;
 T_night = 24*3600-T_day;
 
-%for AR = [8,9,10,11,12,13,14,16,18,20]
-    %j = j+1;
-    %col = cmap (floor(((100-20) -0) / (20-8) * (AR-8)) +1,:);
 AR_values = {}; % ARの値を文字列として保存する配列
 AR_min = 8; % アスペクト比の最小値
 AR_max = 30; % アスペクト比の最大値
@@ -62,7 +59,6 @@ for AR = AR_min:AR_max
             ylabel('Total mass of solar Airplane [kg]');
         
     figure(2);set(gcf,'Position',[487 704 800 420]);
-    legend(AR_values, 'Position', [5 5 10 300])
     subplot(2,2,1);hold on;
         plot(b, v, 'Color', col, 'Linewidth', width);
         [v_min.v(j),index] = min(v);
@@ -123,8 +119,8 @@ figure(1);
 
 figure(2);
     % 凡例を作成
-    % legend(AR_values, 'Location', 'eastoutside');
-    legend(AR_values, 'Position', [5 5 10 300])
+    lgd.Layout.Tile = 'east';
+    legend(AR_values)
     subplot(2, 2, 1);
     plot(v_min.b, v_min.v, 'xk', 'MarkerSize', 4);
     hold on;
@@ -133,11 +129,3 @@ figure(2);
     plot(ratio_area_min.b, ratio_area_min.ratio_area, 'xk', 'MarkerSize', 4);
     hold on;
     plot(ratio_area_min_AR, ratio_area_min_value, 'xr', 'MarkerSize', 6);
-
-
-
-
-
-
-
-
