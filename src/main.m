@@ -81,7 +81,7 @@ for AR = AR_min:AR_max
         grid on;
         xlabel('Wingspan[m]');
         ylabel('Solar Area Ratio [%]');
-    ARforplot = 13;
+    ARforplot = 12;
     if (AR == ARforplot)
         figure (3); set (gcf,'Position' , [487 204 560 420]);
         area (b, [m./m*m_pld;m./m*m_av;m_af;m_bat;m_sc;m_mppt;m_prop]');
@@ -98,17 +98,20 @@ end
 % 総質量の最小値を最小化するAR
 [m_min_value, m_min_index] = min(m_min.m);
 m_min_AR = m_min.b(m_min_index);
-disp(['総質量の最小値を最小化するAR: ', num2str(m_min_AR)]);
+disp(['総質量の最小値を最小化するb: ', num2str(m_min_AR)]);
+disp(['AR: ', AR_values(m_min_index)]);
 
 % 速度の最小値を最小化するAR
 [v_min_value, v_min_index] = min(v_min.v);
 v_min_AR = v_min.b(v_min_index);
-disp(['速度の最小値を最小化するAR: ', num2str(v_min_AR)]);
+disp(['速度の最小値を最小化するb: ', num2str(v_min_AR)]);
+disp(['AR: ', AR_values(v_min_index)]);
 
 % 太陽電池面積比率の最小値を最小化するAR
 [ratio_area_min_value, ratio_area_min_index] = min(ratio_area_min.ratio_area);
 ratio_area_min_AR = ratio_area_min.b(ratio_area_min_index);
-disp(['太陽電池面積比率の最小値を最小化するAR: ', num2str(ratio_area_min_AR)]);
+disp(['太陽電池面積比率の最小値を最小化するb: ', num2str(ratio_area_min_AR)]);
+disp(['AR: ', AR_values(ratio_area_min_index)]);
 
 % 各カテゴリの最小値のポイントにマーカーを付ける
 figure(1);
