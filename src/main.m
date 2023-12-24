@@ -60,21 +60,21 @@ for AR = AR_min:AR_max
         
     figure(2);set(gcf,'Position',[487 704 800 420]);
     subplot(2,2,1);hold on;
-        plot(b, v, 'Color', col, 'Linewidth', width);
+        plot(b, v, 'Color', col, 'Linewidth', width, 'DisplayName', ['AR = ', num2str(AR)]);
         [v_min.v(j),index] = min(v);
         v_min.b(j) = b(index);
         grid on;
         ylabel('speed [m/s]');
     subplot(2,2,3);hold on;
-        plot(b, P_level, 'Color', col, 'LineWidth', width);
+        plot(b, P_level, 'Color', col, 'LineWidth', width, 'DisplayName', ['AR = ', num2str(AR)]);
         grid on;
         ylabel('Power at propeller [W]');
         xlabel('Wingspan [m]');
-    subplot(2,2,2);hold on;
+    ax1 = subplot(2,2,2);hold on;
         plot(b, A, 'Color', col, 'LineWidth',width);
         grid on;
         ylabel('Wing Area [m^2]');
-    subplot(2,2,4);hold on;
+    ax2 = subplot(2,2,4);hold on;
         plot(b,A_sc./A*100,'Color',col,'LineWidth', width);
         [ratio_area_min.ratio_area(j),index] = min(A_sc./(b.^2/AR)*100);
         ratio_area_min.b(j) = b(index);
@@ -115,12 +115,18 @@ figure(1);
     plot(m_min.b, m_min.m, 'xk', 'MarkerSize', 4);
     hold on;
     plot(m_min_AR, m_min_value, 'xr', 'MarkerSize', 6);
-    legend(AR_values,'Location','NorthWest');
+    legend(AR_values);
+    lgd = legend('show');
+    lgd.Location = 'eastoutside'; % 凡例を図の外側（右側）に配置
+    lgd.Title.String = 'Aspect Ratio'; % 凡例のタイトル
 
 figure(2);
     % 凡例を作成
-    lgd.Layout.Tile = 'east';
-    legend(AR_values)
+    % legend(AR_values)
+    % 凡例を右側のサブプロットに関連付け
+    lgd = legend([ax1, ax2], 'show');
+    lgd.Location = 'eastoutside'; % 凡例を図の外側（右側）に配置
+    lgd.Title.String = 'Aspect Ratio'; % 凡例のタイトル
     subplot(2, 2, 1);
     plot(v_min.b, v_min.v, 'xk', 'MarkerSize', 4);
     hold on;
