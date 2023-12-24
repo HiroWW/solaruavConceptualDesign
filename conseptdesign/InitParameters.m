@@ -11,7 +11,7 @@
 
 %==========================================================================
 g = 9.81;  % Gravitational acceleration [m/s^2]
-alt = 500; % Initial altitude [m]
+alt = 20000; % Initial altitude [m]
 alt_array = [0, 1000, 2000, 4000, 6000, 10000, 15000, 20000, 25000, 30000];
 rho_array = [1.224, 1.11, 1.006, 0.819, 0.659, 0.413, 0.192, 0.087, 0.039, 0.017];
 rho = spline(alt_array, rho_array, alt);  % Airdensity at 500m [kg/m^3]
