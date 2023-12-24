@@ -33,7 +33,7 @@ e = 0.9;          % Constant depending on wing shape [-]
 %k_af = 0.44 / 9.81; % Constant [~Kg/m3] 
 %x1 = 3.1;           % Scaling exponent for b [-]
 %x2 = -0.25;         % Scaling exponent for AR [-]
-% == Rizzzo model ==
+% == Rizzo model ==
 k_af = 1.548 / 9.81;
 x1 = 1.312;
 x2 = -0.0046;
@@ -63,6 +63,6 @@ n_mppt = 0.97;   % Efficiency of mppt [-]
 
 %============== Avionics & Payload ==============
 m_av = 0.15;  % Mass of controler and electronics [kg]
-m_pld = 0.5; % Mass of payload [kg]
+m_pld = 5; % Mass of payload [kg]
 p_av = 1.5;   % Power required for control [W]
 p_pld = 0.5;  % Power required for payload [W]
