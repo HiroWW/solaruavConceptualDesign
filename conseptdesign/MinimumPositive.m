@@ -8,7 +8,7 @@ function min_pos = MinimumPositive(z)
                 min_pos = z(j);
             end
         else 
-            disp('coult not solve');
+            %disp('coult not solve');
         end
     end
 end

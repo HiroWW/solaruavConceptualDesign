@@ -14,13 +14,13 @@ g = 9.81;  % Gravitational acceleration [m/s^2]
 alt = 500; % Initial altitude [m]
 alt_array = [0, 1000, 2000, 4000, 6000, 10000, 15000, 20000, 25000, 30000];
 rho_array = [1.224, 1.11, 1.006, 0.819, 0.659, 0.413, 0.192, 0.087, 0.039, 0.017];
-% rho = spline(alt_array, rho_array,20000);  % Airdensity at 500m [kg/m^3]
-rho = 1.1655;
+rho = spline(alt_array, rho_array, alt);  % Airdensity at 500m [kg/m^3]
+% rho = 1.1655;
 %=========== Irradiance conditions ==============
 I_max = 950;       % Maximum irradiance [W/m^2]
 % T_day = 13.2*3600;
 T_day = 13.2*3600; % Duration of the day [s]
-n_wthr = 0.7;      % Margin factor <1 take clouds into account [-]
+n_wthr = 1.0;      % Margin factor <1 take clouds into account [-]
 
 %================ Aerodynamics ==================
 C_L = 0.8;        % Airfoil lift coefficient [-]
@@ -29,9 +29,14 @@ C_D_par = 0.006; % Fuselage drag coefficient [-]
 e = 0.9;          % Constant depending on wing shape [-]
 
 %======= Wing & fuselage Structure ==============
-k_af = 0.44 / 9.81; % Constant [~Kg/m3]
-x1 = 3.1;           % Scaling exponent for b [-]
-x2 = -0.25;         % Scaling exponent for AR [-]
+% == Noth model == 
+%k_af = 0.44 / 9.81; % Constant [~Kg/m3] 
+%x1 = 3.1;           % Scaling exponent for b [-]
+%x2 = -0.25;         % Scaling exponent for AR [-]
+% == Rizzzo model ==
+k_af = 1.548 / 9.81;
+x1 = 1.312;
+x2 = -0.0046;
 
 %============= Propulsion group =================
 n_ctrl = 0.95;  % Efficiency of motor controller [-]
@@ -44,7 +49,8 @@ k_prop = 0.0008; % Mass/Power ration of propulsion group [kg/W]
 %======= Battery and Stepdown converter =========
 n_chrg = 0.95;    % Efficiency of charge process [-]
 n_dchrg = 0.95;   % Efficiency of discharge process [-]
-n_bec = 0.65;     % Efficiency of bec (5V stepdown) [-]
+% n_bec = 0.65;% Efficiency of bec (5V stepdown) [-]
+n_bec = 1.0;
 k_bat = 190*3600; % Energy density of LiPo [J/Kg]
 
 %================ Solar cells ===================

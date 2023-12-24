@@ -16,13 +16,21 @@ j = 0;
 InitParameters;
 T_night = 24*3600-T_day;
 
-for AR = [8,9,10,11,12,13,14,16,18,20]
-    j = j+1;
-    col = cmap (floor(((100-20) -0) / (20-8) * (AR-8)) +1,:);
+%for AR = [8,9,10,11,12,13,14,16,18,20]
+    %j = j+1;
+    %col = cmap (floor(((100-20) -0) / (20-8) * (AR-8)) +1,:);
+
+AR_min = 5; % アスペクト比の最小値
+AR_max = 50; % アスペクト比の最大値
+for AR = AR_min:AR_max
+    j = j + 1;
+    col = cmap(floor(((length(cmap)-1) - 0) / (AR_max - AR_min) * (AR - AR_min)) + 1, :);
 
     i = 0;
-    b_max = 6;
-    b_step = .1;
+    b_max = 90;
+    %b_step = .1;
+    b_step = .5;
+
 
     for b=b_step:b_step:b_max
         EvaluateSolution;
