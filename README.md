@@ -1,6 +1,8 @@
 # solaruavConceptualDesign
 
 matlab code for solar uav conceptual design
+## reference
+Design of Solar Powered Airplanes for Continuous Flight (PhD Thesis - Noth 2008)
 ## output
 - b (wing span) /m
 - AR (aspect ratio)
@@ -57,5 +59,4 @@ m_pld = 0.05; % Mass of payload [kg]
 p_av = 1.5;   % Power required for control [W]
 p_pld = 0.5;  % Power required for payload [W]
 ```
-## reference
-Design of Solar Powered Airplanes for Continuous Flight (PhD Thesis - Noth 2008)
+
