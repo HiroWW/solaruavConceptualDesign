@@ -62,6 +62,7 @@ for AR = AR_min:AR_max
             ylabel('Total mass of solar Airplane [kg]');
         
     figure(2);set(gcf,'Position',[487 704 800 420]);
+    legend(AR_values, 'Position', [5 5 10 300])
     subplot(2,2,1);hold on;
         plot(b, v, 'Color', col, 'Linewidth', width);
         [v_min.v(j),index] = min(v);
@@ -98,22 +99,40 @@ for AR = AR_min:AR_max
     AR_values{end+1} = num2str(AR); % ARの値を文字列として配列に追加
 end
 
-figure (1);
-    plot(m_min.b,m_min.m,'xk','MarkerSize', 4);
-    % legend('8','9','10','11','12','13','14','16','18','20','Location','NorthWest');
-    legend(AR_values,'Location','NorthWest'); % 修正された凡例
+% 総質量の最小値を最小化するAR
+[m_min_value, m_min_index] = min(m_min.m);
+m_min_AR = m_min.b(m_min_index);
+disp(['総質量の最小値を最小化するAR: ', num2str(m_min_AR)]);
+
+% 速度の最小値を最小化するAR
+[v_min_value, v_min_index] = min(v_min.v);
+v_min_AR = v_min.b(v_min_index);
+disp(['速度の最小値を最小化するAR: ', num2str(v_min_AR)]);
+
+% 太陽電池面積比率の最小値を最小化するAR
+[ratio_area_min_value, ratio_area_min_index] = min(ratio_area_min.ratio_area);
+ratio_area_min_AR = ratio_area_min.b(ratio_area_min_index);
+disp(['太陽電池面積比率の最小値を最小化するAR: ', num2str(ratio_area_min_AR)]);
+
+% 各カテゴリの最小値のポイントにマーカーを付ける
+figure(1);
+    plot(m_min.b, m_min.m, 'xk', 'MarkerSize', 4);
+    hold on;
+    plot(m_min_AR, m_min_value, 'xr', 'MarkerSize', 6);
+    legend(AR_values,'Location','NorthWest');
 
 figure(2);
-    subplot (2, 2, 1);
-        plot(v_min.b,v_min.v,'xk','MarkerSize',4);
+    % 凡例を作成
+    % legend(AR_values, 'Location', 'eastoutside');
+    legend(AR_values, 'Position', [5 5 10 300])
+    subplot(2, 2, 1);
+    plot(v_min.b, v_min.v, 'xk', 'MarkerSize', 4);
+    hold on;
+    plot(v_min_AR, v_min_value, 'xr', 'MarkerSize', 6);
     subplot(2, 2, 4);
-        plot(ratio_area_min.b,ratio_area_min.ratio_area,'xk','MarkerSize', 4);
-        % legend('8','9','10','11','12','13','14','16','18','20','Location','NorthWest');
-        legend(AR_values,'Location','NorthWest'); % 修正された凡例
-
-
-
-
+    plot(ratio_area_min.b, ratio_area_min.ratio_area, 'xk', 'MarkerSize', 4);
+    hold on;
+    plot(ratio_area_min_AR, ratio_area_min_value, 'xr', 'MarkerSize', 6);
 
 
 
