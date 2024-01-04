@@ -19,7 +19,8 @@ rho = spline(alt_array, rho_array, alt);  % Airdensity at 500m [kg/m^3]
 %=========== Irradiance conditions ==============
 I_max = 1305;       % Maximum irradiance [W/m^2]
 % T_day = 13.2*3600;
-T_day = 13.2*3600; % Duration of the day [s]
+% T_day = 13.2*3600; % Duration of the day [s]
+T_day = 24*3600; % Duration of the day [s]
 n_wthr = 1.0;      % Margin factor <1 take clouds into account [-]
 
 %================ Aerodynamics ==================

@@ -15,8 +15,8 @@ a9 = pi/(2*n_sc* n_cbr*n_mppt*n_wthr) * ...
 a10 = a0 * a1* (a7 + a8 + a9* (a5+a6));
 a11 = a2 * (a7+a9* (a5+a6)) +a3;
 a12 = a10 * 1/b;
-a13 = a11 + a4*(b^x1);
-% a13 = a11 + 30 * 9.8;
+% a13 = a11 + a4*(b^x1);
+a13 = a11 + 30;
 z = roots([a12 -1 0 a13]);
 Sol_m = MinimumPositive(z)^2;
 
@@ -26,8 +26,8 @@ if (isnan(Sol_m) == 0)
     disp('AR is ');
     disp(AR);
     Sol_P_level = a0*Sol_m^1.5/b;
-    Sol_m_af = a4*b^x1;
-    % Sol_m_af = 30 * 9.8;
+    % Sol_m_af = a4*b^x1;
+    Sol_m_af = 30;
     Sol_P_elec_tot = a1*Sol_P_level+a2;
     Sol_m_bat = a7*Sol_P_elec_tot;
     Sol_A_sc = a9*Sol_P_elec_tot;
