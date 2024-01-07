@@ -73,6 +73,6 @@ n_mppt = 0.97;   % Efficiency of mppt [-]
 
 %============== Avionics & Payload ==============
 m_av = 0.15;  % Mass of controler and electronics [kg]
-m_pld = 5; % Mass of payload [kg]
+m_pld = 50; % Mass of payload [kg]
 p_av = 1.5;   % Power required for control [W]
 p_pld = 0.5;  % Power required for payload [W]
