@@ -67,7 +67,7 @@ k_bat = 190*3600; % Energy density of LiPo [J/Kg]
 k_sc = 0.32;     % Mass density of solar cells [Kg/m2]
 k_enc = 0.26;    % Mass density of encapsulation [Kg/m2]
 k_mppt = 1/2368; % Mass/Power ratio of mppt [kg/W]
-n_sc = 0.169;    % Efficiency of solar cells [-]
+n_sc = 0.32;    % Efficiency of solar cells [-]
 n_cbr = 0.9;     % Efficiency of cambered configuration [-]
 n_mppt = 0.97;   % Efficiency of mppt [-]
 

@@ -18,7 +18,7 @@ T_night = 24*3600-T_day;
 
 AR_values = {}; % ARの値を文字列として保存する配列
 AR_min = 8; % アスペクト比の最小値
-AR_max = 30; % アスペクト比の最大値
+AR_max = 22; % アスペクト比の最大値
 for AR = AR_min:AR_max
     j = j + 1;
     col = cmap(floor(((length(cmap)-1) - 0) / (AR_max - AR_min) * (AR - AR_min)) + 1, :);
