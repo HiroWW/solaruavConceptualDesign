@@ -61,18 +61,18 @@ n_chrg = 0.95;    % Efficiency of charge process [-]
 n_dchrg = 0.95;   % Efficiency of discharge process [-]
 n_bec = 0.65;% Efficiency of bec (5V stepdown) [-]
 % n_bec = 1.0;
-k_bat = 190*3600; % Energy density of LiPo [J/Kg]
+k_bat = 200*3600; % Energy density of LiPo [J/Kg]
 
 %================ Solar cells ===================
 k_sc = 0.32;     % Mass density of solar cells [Kg/m2]
 k_enc = 0.26;    % Mass density of encapsulation [Kg/m2]
 k_mppt = 1/2368; % Mass/Power ratio of mppt [kg/W]
-n_sc = 0.32;    % Efficiency of solar cells [-]
+n_sc = 0.3265;    % Efficiency of solar cells [-]
 n_cbr = 0.9;     % Efficiency of cambered configuration [-]
 n_mppt = 0.97;   % Efficiency of mppt [-]
 
 %============== Avionics & Payload ==============
 m_av = 0.15;  % Mass of controler and electronics [kg]
-m_pld = 50; % Mass of payload [kg]
+m_pld = 30; % Mass of payload [kg]
 p_av = 1.5;   % Power required for control [W]
-p_pld = 0.5;  % Power required for payload [W]
+p_pld = 50;  % Power required for payload [W]

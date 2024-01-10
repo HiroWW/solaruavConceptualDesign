@@ -17,14 +17,14 @@ InitParameters;
 T_night = 24*3600-T_day;
 
 AR_values = {}; % ARの値を文字列として保存する配列
-AR_min = 8; % アスペクト比の最小値
-AR_max = 22; % アスペクト比の最大値
+AR_min = 10; % アスペクト比の最小値
+AR_max = 30; % アスペクト比の最大値
 for AR = AR_min:AR_max
     j = j + 1;
     col = cmap(floor(((length(cmap)-1) - 0) / (AR_max - AR_min) * (AR - AR_min)) + 1, :);
 
     i = 0;
-    b_min = 15;
+    b_min = .5;
     b_max = 75;
     %b_step = .1;
     b_step = .5;
@@ -82,7 +82,7 @@ for AR = AR_min:AR_max
         grid on;
         xlabel('Wingspan[m]');
         ylabel('Solar Area Ratio [%]');
-    ARforplot = 20;
+    ARforplot = 17;
     if (AR == ARforplot)
         figure (3); set (gcf,'Position' , [487 204 560 420]);
         area (b, [m./m*m_pld;m./m*m_av;m_af;m_bat;m_sc;m_mppt;m_prop]');
