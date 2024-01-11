@@ -24,8 +24,8 @@ for AR = AR_min:AR_max
     col = cmap(floor(((length(cmap)-1) - 0) / (AR_max - AR_min) * (AR - AR_min)) + 1, :);
 
     i = 0;
-    b_min = 22;
-    b_max = 29.5;
+    b_min = 24;
+    b_max = 24;
     %b_step = .1;
     b_step = .5;
 
