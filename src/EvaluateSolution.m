@@ -30,7 +30,7 @@ if (isnan(Sol_m) == 0)
     Sol_m_af = a4*b^x1;
     % Sol_m_af = 36;
     Sol_P_elec_tot = a1*Sol_P_level+a2;
-    Sol_m_bat = a7*Sol_P_elec_tot;
+    Sol_m_bat = a7*Sol_P_elec_tot
     Sol_A_sc = a9*Sol_P_elec_tot;
     Sol_m_sc = a5*Sol_A_sc;
     Sol_m_mppt = a6*Sol_A_sc;
