@@ -61,7 +61,7 @@ n_chrg = 0.95;    % Efficiency of charge process [-]
 n_dchrg = 0.95;   % Efficiency of discharge process [-]
 n_bec = 0.65;% Efficiency of bec (5V stepdown) [-]
 % n_bec = 1.0;
-k_bat = 200*3600; % Energy density of LiPo [J/Kg]
+k_bat = 300*3600; % Energy density of LiPo [J/Kg]
 
 %================ Solar cells ===================
 k_sc = 0.32;     % Mass density of solar cells [Kg/m2]
