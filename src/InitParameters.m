@@ -14,8 +14,8 @@ g = 9.81;  % Gravitational acceleration [m/s^2]
 alt = 20000; % Initial altitude [m]
 alt_array = [0, 1000, 2000, 4000, 6000, 10000, 15000, 20000, 25000, 30000];
 rho_array = [1.224, 1.11, 1.006, 0.819, 0.659, 0.413, 0.192, 0.087, 0.039, 0.017];
-rho = spline(alt_array, rho_array, alt);  % Airdensity at 500m [kg/m^3]
-% rho = 1.1655;
+% rho = spline(alt_array, rho_array, alt);  % Airdensity at 500m [kg/m^3]
+rho = 0.087;
 %=========== Irradiance conditions ==============
 I_max = 1305;       % Maximum irradiance [W/m^2]
 % T_day = 13.2*3600;
@@ -24,9 +24,9 @@ T_day = 13.2*3600; % Duration of the day [s]
 n_wthr = 1.0;      % Margin factor <1 take clouds into account [-]
 
 %================ Aerodynamics ==================
-C_L = 0.94;        % Airfoil lift coefficient [-]
-C_D_afl = 0.008; % Airfoil drag coefficient [-]
-C_D_par = 0.0; % Fuselage drag coefficient [-]
+C_L = 0.85;        % Airfoil lift coefficient [-]
+C_D_afl = 0.0110; % Airfoil drag coefficient [-]
+C_D_par = 0.003; % Fuselage drag coefficient [-]
 e = 0.9;          % Constant depending on wing shape [-]
 
 %======= Wing & fuselage Structure ==============
@@ -73,6 +73,6 @@ n_mppt = 0.97;   % Efficiency of mppt [-]
 
 %============== Avionics & Payload ==============
 m_av = 0.15;  % Mass of controler and electronics [kg]
-m_pld = 30; % Mass of payload [kg]
+m_pld = 5; % Mass of payload [kg]
 p_av = 1.5;   % Power required for control [W]
 p_pld = 50;  % Power required for payload [W]
