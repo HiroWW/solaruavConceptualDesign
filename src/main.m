@@ -82,7 +82,7 @@ for AR = AR_min:AR_max
         grid on;
         xlabel('Wingspan[m]');
         ylabel('Solar Area Ratio [%]');
-    ARforplot = 14;
+    ARforplot = 16;
     if (AR == ARforplot)
         figure (3); set (gcf,'Position' , [487 204 560 420]);
         area (b, [m./m*m_pld;m./m*m_av;m_af;m_bat;m_sc;m_mppt;m_prop]');
