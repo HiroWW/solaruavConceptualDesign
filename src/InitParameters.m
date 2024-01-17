@@ -24,8 +24,8 @@ T_day = 13.2*3600; % Duration of the day [s]
 n_wthr = 1.0;      % Margin factor <1 take clouds into account [-]
 
 %================ Aerodynamics ==================
-C_L = 0.85;        % Airfoil lift coefficient [-]
-C_D_afl = 0.0110; % Airfoil drag coefficient [-]
+C_L = 1.0277;        % Airfoil lift coefficient [-]
+C_D_afl = 0.0099; % Airfoil drag coefficient [-]
 C_D_par = 0.003; % Fuselage drag coefficient [-]
 e = 0.9;          % Constant depending on wing shape [-]
 
