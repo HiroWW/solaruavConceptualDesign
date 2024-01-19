@@ -26,6 +26,7 @@ e = 0.9;          % Constant depending on wing shape [-]
 k_af = 0.44 / 9.81; % Constant [~Kg/m3]
 x1 = 3.1;           % Scaling exponent for b [-]
 x2 = -0.25;         % Scaling exponent for AR [-]
+% should use different model
 ```
 #### Propulsion group 
 ```Matlab
