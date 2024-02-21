@@ -26,7 +26,7 @@ n_wthr = 1.0;      % Margin factor <1 take clouds into account [-]
 %================ Aerodynamics ==================
 C_L = 1.024;        % Airfoil lift coefficient [-]
 C_D_afl = 0.00971; % Airfoil drag coefficient [-]
-C_D_par = 0.01; % Fuselage drag coefficient [-]
+C_D_par = 0.017524; % Fuselage drag coefficient [-]
 e = 0.9;          % Constant depending on wing shape [-]
 
 %======= Wing & fuselage Structure ==============
@@ -61,7 +61,7 @@ n_chrg = 0.95;    % Efficiency of charge process [-]
 n_dchrg = 0.95;   % Efficiency of discharge process [-]
 n_bec = 0.65;% Efficiency of bec (5V stepdown) [-]
 % n_bec = 1.0;
-k_bat = 300*3600; % Energy density of LiPo [J/Kg]
+k_bat = 350*3600; % Energy density of LiPo [J/Kg]
 
 %================ Solar cells ===================
 k_sc = 0.32;     % Mass density of solar cells [Kg/m2]
@@ -73,6 +73,6 @@ n_mppt = 0.97;   % Efficiency of mppt [-]
 
 %============== Avionics & Payload ==============
 m_av = 0.15;  % Mass of controler and electronics [kg]
-m_pld = 30; % Mass of payload [kg]
+m_pld = 15; % Mass of payload [kg]
 p_av = 1.5;   % Power required for control [W]
 p_pld = 50;  % Power required for payload [W]
